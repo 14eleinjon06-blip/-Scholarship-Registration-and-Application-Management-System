@@ -344,7 +344,7 @@
                 <input type="password" id="loginStudentPass" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-brand-purple text-purple-700 font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-purple-700 text-white font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 <span>Sign In as Student</span>
               </button>
@@ -453,7 +453,7 @@
               <p class="text-brand-black/80 text-sm mt-1 max-w-xl">Welcome to your digital scholarship hub. Apply, manage requirements, and track payout statuses easily.</p>
               
               <div class="mt-4 flex flex-wrap gap-2">
-                <button onclick="showStudentSection('apply')" class="px-4 py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition shadow">
+                <button onclick="showStudentSection('apply')" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700 transition shadow">
                   <i class="fa-solid fa-plus mr-1"></i> Apply for Scholarship
                 </button>
                 <button onclick="showStudentSection('tracking')" class="px-4 py-2 bg-white/80 text-brand-black font-bold text-xs rounded-xl hover:bg-white transition">
@@ -677,7 +677,7 @@
               </div>
 
               <div class="flex justify-end pt-4">
-                <button onclick="goToWizardStep(2)" class="px-5 py-2.5 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+                <button onclick="goToWizardStep(2)" class="px-5 py-2.5 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700 transition">
                   Next: Upload Documents <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
               </div>
@@ -730,7 +730,7 @@
                 <button onclick="goToWizardStep(1)" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-300">
                   <i class="fa-solid fa-arrow-left mr-1"></i> Back
                 </button>
-                <button onclick="goToWizardStep(3)" class="px-5 py-2.5 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+                <button onclick="goToWizardStep(3)" class="px-5 py-2.5 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700 transition">
                   Next: Review Application <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
               </div>
@@ -820,7 +820,7 @@
               <input type="password" id="setNewPassword" placeholder="Enter new password" class="w-full p-2.5 bg-white border rounded-xl text-xs">
             </div>
 
-            <button onclick="updatePassword()" class="px-4 py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+            <button onclick="updatePassword()" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700 transition">
               Update Security Password
             </button>
           </div>
@@ -1062,7 +1062,7 @@
               <h2 class="text-xl font-black text-brand-black">System Reports & Analytics</h2>
               <p class="text-xs text-slate-500">Exportable summary logs and financial reports.</p>
             </div>
-            <button onclick="simulateExportReport()" class="px-4 py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 shadow">
+            <button onclick="simulateExportReport()" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700 shadow">
               <i class="fa-solid fa-download mr-1"></i> Export Report (CSV)
             </button>
           </div>
@@ -1672,7 +1672,7 @@
             <h4 class="font-bold text-sm text-brand-black">${s.title}</h4>
             <p class="text-xs text-slate-500 mt-1 line-clamp-2">${s.description}</p>
           </div>
-          <button onclick="applyForScholarshipDirect('${s.id}')" class="mt-4 w-full py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">Apply Now</button>
+          <button onclick="applyForScholarshipDirect('${s.id}')" class="mt-4 w-full py-2 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700">Apply Now</button>
         </div>
       `).join('');
     }
@@ -1725,7 +1725,7 @@
               <span class="text-[10px] text-slate-500 block uppercase font-bold">Grant Amount</span>
               <strong class="text-lg font-black text-emerald-600">₱${s.amount.toLocaleString()}</strong>
             </div>
-            <button onclick="applyForScholarshipDirect('${s.id}')" class="px-5 py-2.5 bg-brand-purple hover:bg-slate-800 text-purple-700 font-bold text-xs rounded-xl shadow transition">
+            <button onclick="applyForScholarshipDirect('${s.id}')" class="px-5 py-2.5 bg-brand-purple hover:bg-purple-700 text-white font-bold text-xs rounded-xl shadow transition">
               Apply Now
             </button>
           </div>
@@ -2143,7 +2143,7 @@
             <td class="p-3 font-bold text-amber-700">${student ? student.gwa : 'N/A'}</td>
             <td class="p-3">${getStatusBadgeHTML(a.status)}</td>
             <td class="p-3 text-right">
-              <button onclick="openReviewModal('${a.id}')" class="px-3 py-1.5 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">
+              <button onclick="openReviewModal('${a.id}')" class="px-3 py-1.5 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-700">
                 Inspect & Action
               </button>
             </td>
