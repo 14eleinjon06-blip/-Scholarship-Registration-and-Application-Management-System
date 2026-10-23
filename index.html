@@ -19,12 +19,12 @@
         extend: {
           colors: {
             brand: {
-              purple: '#7C3AED',
-              darkpurple: '#3B0764',
-              purpleLight: '#F3E8FF',
-              black: '#171717',
-              accent: '#9333EA',
-              darkBg: '#171717',
+              purple: '#8B5CF6',
+              darkpurple: '#6D28D9',
+              purpleLight: '#F5F3FF',
+              black: '#29243A',
+              accent: '#A855F7',
+              darkBg: '#FFFFFF',
               white: '#FFFFFF'
             }
           },
@@ -41,15 +41,15 @@
     .gcash-card {
       background: #FFFFFF;
       border-radius: 20px;
-      box-shadow: 0 10px 30px -5px rgba(76, 29, 149, 0.10);
+      box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.12);
       border: 1px solid #E9D5FF;
     }
     .gcash-banner {
-      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+      background: linear-gradient(135deg, #8B5CF6 0%, #C084FC 100%);
       color: #FFFFFF;
     }
     .gcash-gradient-dark {
-      background: linear-gradient(135deg, #171717 0%, #3B0764 100%);
+      background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
     }
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
@@ -195,7 +195,7 @@
 <body class="h-full flex flex-col text-slate-800 antialiased custom-scrollbar">
 
   <!-- TOP PERSISTENT DEMO & ROLE SWITCHER BAR -->
-  <div id="topDemoBar" class="bg-brand-black text-white text-xs py-2 px-4 flex flex-wrap justify-between items-center z-50 border-b border-brand-darkpurple sticky top-0">
+  <div id="topDemoBar" class="bg-brand-purple text-white text-xs py-2 px-4 flex flex-wrap justify-between items-center z-50 border-b border-brand-darkpurple sticky top-0">
     <div class="flex items-center gap-3">
       <span class="flex h-2 w-2 relative">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
@@ -206,13 +206,13 @@
     </div>
 
     <div class="flex items-center gap-2 mt-1 sm:mt-0">
-      <button onclick="switchRoleView('auth')" class="px-2.5 py-1 rounded-full bg-purple-900 hover:bg-purple-800 transition font-medium text-white flex items-center gap-1">
+      <button onclick="switchRoleView('auth')" class="px-2.5 py-1 rounded-full bg-purple-600 hover:bg-purple-700 transition font-medium text-white flex items-center gap-1">
         <i class="fa-solid fa-right-to-bracket text-brand-purple"></i> Auth Portal
       </button>
-      <button onclick="switchRoleView('student')" class="px-2.5 py-1 rounded-full bg-purple-900 hover:bg-purple-800 transition font-medium text-white flex items-center gap-1">
+      <button onclick="switchRoleView('student')" class="px-2.5 py-1 rounded-full bg-purple-600 hover:bg-purple-700 transition font-medium text-white flex items-center gap-1">
         <i class="fa-solid fa-user-graduate text-brand-purple"></i> Student View
       </button>
-      <button onclick="switchRoleView('admin')" class="px-2.5 py-1 rounded-full bg-purple-900 hover:bg-purple-800 transition font-medium text-white flex items-center gap-1">
+      <button onclick="switchRoleView('admin')" class="px-2.5 py-1 rounded-full bg-purple-600 hover:bg-purple-700 transition font-medium text-white flex items-center gap-1">
         <i class="fa-solid fa-user-shield text-brand-purple"></i> Admin View
       </button>
       <div class="h-4 w-[1px] bg-slate-600 mx-1"></div>
@@ -327,7 +327,7 @@
                 <input type="password" id="regPassword" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-purple-800 text-white font-black text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 mt-4">
+              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-purple-700 text-white font-black text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 mt-4">
                 <span>Create Student Account</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
@@ -344,7 +344,7 @@
                 <input type="password" id="loginStudentPass" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-black hover:bg-brand-darkpurple text-purple-700 font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-brand-purple text-purple-700 font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 <span>Sign In as Student</span>
               </button>
@@ -373,7 +373,7 @@
                 <input type="password" id="loginAdminPass" value="admin123" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-black hover:bg-purple-900 text-white font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-purple-600 text-white font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-user-shield text-brand-purple"></i>
                 <span>Access Administrator Portal</span>
               </button>
@@ -394,9 +394,9 @@
     <!-- ========================================== -->
     <div id="studentPanelView" class="hidden flex-1 flex flex-col md:flex-row bg-white min-h-0 overflow-hidden">
       <!-- Student Sidebar Nav -->
-      <aside class="w-full md:w-64 bg-brand-black text-white flex flex-col shrink-0 border-r border-slate-800">
+      <aside class="w-full md:w-64 bg-brand-purple text-white flex flex-col shrink-0 border-r border-slate-800">
         <!-- Student Header Profile Brief -->
-        <div class="p-4 bg-brand-darkpurple flex items-center gap-3">
+        <div class="p-4 bg-brand-purple flex items-center gap-3">
           <div class="w-11 h-11 rounded-full bg-brand-purple text-white flex items-center justify-center font-black text-lg shadow-inner">
             <span id="studentAvatarInitials">JD</span>
           </div>
@@ -408,26 +408,26 @@
 
         <!-- Navigation Links -->
         <nav class="flex-1 p-3 space-y-1 overflow-y-auto no-scrollbar">
-          <button onclick="showStudentSection('dashboard')" id="sNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition">
+          <button onclick="showStudentSection('dashboard')" id="sNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-600/60 transition">
             <i class="fa-solid fa-house w-4 text-center"></i> Dashboard
           </button>
-          <button onclick="showStudentSection('profile')" id="sNav-profile" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showStudentSection('profile')" id="sNav-profile" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-id-card w-4 text-center"></i> Student Profile
           </button>
-          <button onclick="showStudentSection('scholarships')" id="sNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showStudentSection('scholarships')" id="sNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-graduation-cap w-4 text-center"></i> Available Scholarships
           </button>
-          <button onclick="showStudentSection('apply')" id="sNav-apply" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showStudentSection('apply')" id="sNav-apply" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-pen-to-square w-4 text-center"></i> Application Form
           </button>
-          <button onclick="showStudentSection('tracking')" id="sNav-tracking" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showStudentSection('tracking')" id="sNav-tracking" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-route w-4 text-center"></i> Application Tracking
           </button>
-          <button onclick="showStudentSection('notifications')" id="sNav-notifications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showStudentSection('notifications')" id="sNav-notifications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <span class="flex items-center gap-3"><i class="fa-solid fa-bell w-4 text-center"></i> Notifications</span>
             <span id="studentNotifBadge" class="bg-brand-purple text-white text-[10px] font-black px-2 py-0.5 rounded-full hidden">0</span>
           </button>
-          <button onclick="showStudentSection('settings')" id="sNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showStudentSection('settings')" id="sNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-gear w-4 text-center"></i> Account Settings
           </button>
         </nav>
@@ -448,12 +448,12 @@
           <!-- GCash Style Banner Card -->
           <div class="gcash-banner rounded-3xl p-6 shadow-md relative overflow-hidden">
             <div class="relative z-10">
-              <span class="px-3 py-1 bg-brand-black/10 rounded-full text-xs font-black uppercase tracking-wider text-brand-black">Student Portal</span>
+              <span class="px-3 py-1 bg-brand-purple/10 rounded-full text-xs font-black uppercase tracking-wider text-brand-black">Student Portal</span>
               <h2 class="text-2xl sm:text-3xl font-black text-brand-black mt-2">Mabuhay, <span id="dashStudentName">Student</span>!</h2>
               <p class="text-brand-black/80 text-sm mt-1 max-w-xl">Welcome to your digital scholarship hub. Apply, manage requirements, and track payout statuses easily.</p>
               
               <div class="mt-4 flex flex-wrap gap-2">
-                <button onclick="showStudentSection('apply')" class="px-4 py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition shadow">
+                <button onclick="showStudentSection('apply')" class="px-4 py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition shadow">
                   <i class="fa-solid fa-plus mr-1"></i> Apply for Scholarship
                 </button>
                 <button onclick="showStudentSection('tracking')" class="px-4 py-2 bg-white/80 text-brand-black font-bold text-xs rounded-xl hover:bg-white transition">
@@ -534,7 +534,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Left Info Sidebar Card -->
             <div class="gcash-card p-6 text-center">
-              <div class="w-24 h-24 rounded-full bg-brand-black text-white text-3xl font-black mx-auto flex items-center justify-center mb-3 shadow-md">
+              <div class="w-24 h-24 rounded-full bg-brand-purple text-white text-3xl font-black mx-auto flex items-center justify-center mb-3 shadow-md">
                 <span id="profAvatarInitials">JD</span>
               </div>
               <h3 id="profCardName" class="font-bold text-base text-slate-800">Juan De La Cruz</h3>
@@ -677,7 +677,7 @@
               </div>
 
               <div class="flex justify-end pt-4">
-                <button onclick="goToWizardStep(2)" class="px-5 py-2.5 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+                <button onclick="goToWizardStep(2)" class="px-5 py-2.5 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
                   Next: Upload Documents <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
               </div>
@@ -730,7 +730,7 @@
                 <button onclick="goToWizardStep(1)" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-300">
                   <i class="fa-solid fa-arrow-left mr-1"></i> Back
                 </button>
-                <button onclick="goToWizardStep(3)" class="px-5 py-2.5 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+                <button onclick="goToWizardStep(3)" class="px-5 py-2.5 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
                   Next: Review Application <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
               </div>
@@ -768,7 +768,7 @@
                 <button onclick="goToWizardStep(2)" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-300">
                   <i class="fa-solid fa-arrow-left mr-1"></i> Back
                 </button>
-                <button onclick="submitScholarshipApplication()" class="px-6 py-3 bg-brand-purple hover:bg-purple-800 text-white font-black text-xs rounded-xl shadow-lg transition transform active:scale-95 flex items-center gap-2">
+                <button onclick="submitScholarshipApplication()" class="px-6 py-3 bg-brand-purple hover:bg-purple-700 text-white font-black text-xs rounded-xl shadow-lg transition transform active:scale-95 flex items-center gap-2">
                   <i class="fa-solid fa-paper-plane"></i> Submit Scholarship Application
                 </button>
               </div>
@@ -820,7 +820,7 @@
               <input type="password" id="setNewPassword" placeholder="Enter new password" class="w-full p-2.5 bg-white border rounded-xl text-xs">
             </div>
 
-            <button onclick="updatePassword()" class="px-4 py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+            <button onclick="updatePassword()" class="px-4 py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
               Update Security Password
             </button>
           </div>
@@ -836,7 +836,7 @@
       <!-- Admin Sidebar Nav -->
       <aside class="w-full md:w-64 bg-slate-900 text-white flex flex-col shrink-0 border-r border-slate-800">
         <!-- Admin Header -->
-        <div class="p-4 bg-brand-black flex items-center gap-3">
+        <div class="p-4 bg-brand-purple flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-brand-purple text-white flex items-center justify-center font-black text-lg shadow">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
@@ -848,26 +848,26 @@
 
         <!-- Navigation Links -->
         <nav class="flex-1 p-3 space-y-1 overflow-y-auto custom-scrollbar">
-          <button onclick="showAdminSection('dashboard')" id="aNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition">
+          <button onclick="showAdminSection('dashboard')" id="aNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-600/60 transition">
             <i class="fa-solid fa-chart-pie w-4 text-center"></i> Dashboard
           </button>
-          <button onclick="showAdminSection('scholarships')" id="aNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showAdminSection('scholarships')" id="aNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-folder-plus w-4 text-center"></i> Scholarship Programs
           </button>
-          <button onclick="showAdminSection('students')" id="aNav-students" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showAdminSection('students')" id="aNav-students" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-users w-4 text-center"></i> Student Records
           </button>
-          <button onclick="showAdminSection('applications')" id="aNav-applications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showAdminSection('applications')" id="aNav-applications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <span class="flex items-center gap-3"><i class="fa-solid fa-clipboard-check w-4 text-center"></i> Verification & Review</span>
             <span id="adminPendingBadge" class="bg-amber-500 text-slate-900 font-bold text-[10px] px-2 py-0.5 rounded-full hidden">0</span>
           </button>
-          <button onclick="showAdminSection('approved')" id="aNav-approved" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showAdminSection('approved')" id="aNav-approved" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-user-check w-4 text-center"></i> Approved Scholars
           </button>
-          <button onclick="showAdminSection('reports')" id="aNav-reports" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showAdminSection('reports')" id="aNav-reports" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-chart-column w-4 text-center"></i> Reports & Analytics
           </button>
-          <button onclick="showAdminSection('settings')" id="aNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
+          <button onclick="showAdminSection('settings')" id="aNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition">
             <i class="fa-solid fa-sliders w-4 text-center"></i> System Settings
           </button>
         </nav>
@@ -999,7 +999,7 @@
           <!-- Applications Filter Bar -->
           <div class="gcash-card p-4 flex flex-wrap gap-3 items-center justify-between">
             <div class="flex gap-2">
-              <button onclick="filterAdminApps('ALL')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-brand-black text-white">All Submissions</button>
+              <button onclick="filterAdminApps('ALL')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-brand-purple text-white">All Submissions</button>
               <button onclick="filterAdminApps('Under Review')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-100 text-amber-800">Pending Review</button>
               <button onclick="filterAdminApps('Returned for Correction')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-100 text-blue-800">Returned</button>
             </div>
@@ -1062,7 +1062,7 @@
               <h2 class="text-xl font-black text-brand-black">System Reports & Analytics</h2>
               <p class="text-xs text-slate-500">Exportable summary logs and financial reports.</p>
             </div>
-            <button onclick="simulateExportReport()" class="px-4 py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 shadow">
+            <button onclick="simulateExportReport()" class="px-4 py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 shadow">
               <i class="fa-solid fa-download mr-1"></i> Export Report (CSV)
             </button>
           </div>
@@ -1118,7 +1118,7 @@
   <div id="appReviewModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="gcash-card w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden">
       <!-- Modal Header -->
-      <div class="p-4 bg-brand-black text-white flex justify-between items-center">
+      <div class="p-4 bg-brand-purple text-white flex justify-between items-center">
         <div>
           <h3 class="font-bold text-sm text-brand-purple" id="modalReviewAppId">App #APP-001</h3>
           <p class="text-xs text-slate-300" id="modalReviewStudentName">Applicant Name</p>
@@ -1411,7 +1411,7 @@
       const container = document.getElementById('toastContainer');
       const toast = document.createElement('div');
       toast.className = `p-3.5 rounded-2xl shadow-xl text-xs font-bold flex items-center justify-between text-white transition transform duration-300 translate-y-2 pointer-events-auto ${
-        type === 'error' ? 'bg-rose-600' : type === 'success' ? 'bg-emerald-600' : 'bg-brand-black border border-brand-purple/30'
+        type === 'error' ? 'bg-rose-600' : type === 'success' ? 'bg-emerald-600' : 'bg-brand-purple border border-brand-purple/30'
       }`;
       toast.innerHTML = `
         <div class="flex items-center gap-2">
@@ -1587,13 +1587,13 @@
         const el = document.getElementById(`studentSec-${s}`);
         const btn = document.getElementById(`sNav-${s}`);
         if (el) el.classList.add('hidden');
-        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition";
+        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition";
       });
 
       const activeEl = document.getElementById(`studentSec-${sec}`);
       const activeBtn = document.getElementById(`sNav-${sec}`);
       if (activeEl) activeEl.classList.remove('hidden');
-      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition";
+      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-600/60 transition";
 
       if (sec === 'scholarships') renderScholarshipList();
       if (sec === 'apply') prepareApplicationWizard();
@@ -1631,7 +1631,7 @@
             </div>
             <div class="flex items-center gap-3">
               ${getStatusBadgeHTML(latest.status)}
-              <button onclick="showStudentSection('tracking')" class="px-3 py-1.5 bg-brand-black text-white font-bold text-xs rounded-xl">View Lifecycle</button>
+              <button onclick="showStudentSection('tracking')" class="px-3 py-1.5 bg-brand-purple text-white font-bold text-xs rounded-xl">View Lifecycle</button>
             </div>
           </div>
         `;
@@ -1672,7 +1672,7 @@
             <h4 class="font-bold text-sm text-brand-black">${s.title}</h4>
             <p class="text-xs text-slate-500 mt-1 line-clamp-2">${s.description}</p>
           </div>
-          <button onclick="applyForScholarshipDirect('${s.id}')" class="mt-4 w-full py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">Apply Now</button>
+          <button onclick="applyForScholarshipDirect('${s.id}')" class="mt-4 w-full py-2 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">Apply Now</button>
         </div>
       `).join('');
     }
@@ -1725,7 +1725,7 @@
               <span class="text-[10px] text-slate-500 block uppercase font-bold">Grant Amount</span>
               <strong class="text-lg font-black text-emerald-600">₱${s.amount.toLocaleString()}</strong>
             </div>
-            <button onclick="applyForScholarshipDirect('${s.id}')" class="px-5 py-2.5 bg-brand-black hover:bg-slate-800 text-purple-700 font-bold text-xs rounded-xl shadow transition">
+            <button onclick="applyForScholarshipDirect('${s.id}')" class="px-5 py-2.5 bg-brand-purple hover:bg-slate-800 text-purple-700 font-bold text-xs rounded-xl shadow transition">
               Apply Now
             </button>
           </div>
@@ -1964,13 +1964,13 @@
         const el = document.getElementById(`adminSec-${s}`);
         const btn = document.getElementById(`aNav-${s}`);
         if (el) el.classList.add('hidden');
-        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition";
+        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-600 hover:text-white transition";
       });
 
       const activeEl = document.getElementById(`adminSec-${sec}`);
       const activeBtn = document.getElementById(`aNav-${sec}`);
       if (activeEl) activeEl.classList.remove('hidden');
-      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition";
+      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-600/60 transition";
 
       if (sec === 'dashboard') renderAdminDashboard();
       if (sec === 'scholarships') renderAdminScholarships();
@@ -2143,7 +2143,7 @@
             <td class="p-3 font-bold text-amber-700">${student ? student.gwa : 'N/A'}</td>
             <td class="p-3">${getStatusBadgeHTML(a.status)}</td>
             <td class="p-3 text-right">
-              <button onclick="openReviewModal('${a.id}')" class="px-3 py-1.5 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">
+              <button onclick="openReviewModal('${a.id}')" class="px-3 py-1.5 bg-brand-purple text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">
                 Inspect & Action
               </button>
             </td>
