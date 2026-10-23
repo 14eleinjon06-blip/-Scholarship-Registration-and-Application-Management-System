@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-slate-950">
+<html lang="en" class="h-full bg-white">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +20,11 @@
           colors: {
             brand: {
               purple: '#7C3AED',
-              darkpurple: '#4C1D95',
-              purpleLight: '#EDE9FE',
-              black: '#0B0B0F',
-              accent: '#A855F7',
-              darkBg: '#0B0B0F',
+              darkpurple: '#3B0764',
+              purpleLight: '#F3E8FF',
+              black: '#171717',
+              accent: '#9333EA',
+              darkBg: '#171717',
               white: '#FFFFFF'
             }
           },
@@ -37,29 +37,29 @@
   </script>
 
   <style>
-    body { font-family: 'Inter', sans-serif; background: #0B0B0F; color: #F8FAFC; }
+    body { font-family: 'Inter', sans-serif; background: #F8FAFC; color: #1F2937; }
     .gcash-card {
-      background: #17131F;
+      background: #FFFFFF;
       border-radius: 20px;
-      box-shadow: 0 10px 30px -5px rgba(76, 29, 149, 0.12);
-      border: 1px solid rgba(168, 85, 247, 0.22);
+      box-shadow: 0 10px 30px -5px rgba(76, 29, 149, 0.10);
+      border: 1px solid #E9D5FF;
     }
     .gcash-banner {
       background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
-      color: #0B0B0F;
+      color: #FFFFFF;
     }
     .gcash-gradient-dark {
-      background: linear-gradient(135deg, #0B0B0F 0%, #2E1065 100%);
+      background: linear-gradient(135deg, #171717 0%, #3B0764 100%);
     }
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
-      background: #17131F;
+      background: #FFFFFF;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #7C3AED;
+      background: #9333EA;
       border-radius: 10px;
     }
     /* Hide scrollbar for clean horizontal tab bars */
@@ -72,7 +72,7 @@
     }
   </style>
 </head>
-<body class="h-full flex flex-col text-slate-100 antialiased custom-scrollbar">
+<body class="h-full flex flex-col text-slate-800 antialiased custom-scrollbar">
 
   <!-- TOP PERSISTENT DEMO & ROLE SWITCHER BAR -->
   <div id="topDemoBar" class="bg-brand-black text-white text-xs py-2 px-4 flex flex-wrap justify-between items-center z-50 border-b border-brand-darkpurple sticky top-0">
@@ -81,22 +81,22 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-purple"></span>
       </span>
-      <span class="font-bold tracking-wide text-brand-purple uppercase">EduPay System Simulator</span>
+      <span class="font-bold tracking-wide text-purple-300 uppercase">EduPay System Simulator</span>
       <span class="hidden md:inline text-slate-300">| Active User: <strong id="currentUserLabel" class="text-white">None (Not Logged In)</strong></span>
     </div>
 
     <div class="flex items-center gap-2 mt-1 sm:mt-0">
-      <button onclick="switchRoleView('auth')" class="px-2.5 py-1 rounded-full bg-slate-700 hover:bg-slate-600 transition font-medium text-white flex items-center gap-1">
+      <button onclick="switchRoleView('auth')" class="px-2.5 py-1 rounded-full bg-purple-900 hover:bg-purple-800 transition font-medium text-white flex items-center gap-1">
         <i class="fa-solid fa-right-to-bracket text-brand-purple"></i> Auth Portal
       </button>
-      <button onclick="switchRoleView('student')" class="px-2.5 py-1 rounded-full bg-slate-700 hover:bg-slate-600 transition font-medium text-white flex items-center gap-1">
+      <button onclick="switchRoleView('student')" class="px-2.5 py-1 rounded-full bg-purple-900 hover:bg-purple-800 transition font-medium text-white flex items-center gap-1">
         <i class="fa-solid fa-user-graduate text-brand-purple"></i> Student View
       </button>
-      <button onclick="switchRoleView('admin')" class="px-2.5 py-1 rounded-full bg-slate-700 hover:bg-slate-600 transition font-medium text-white flex items-center gap-1">
+      <button onclick="switchRoleView('admin')" class="px-2.5 py-1 rounded-full bg-purple-900 hover:bg-purple-800 transition font-medium text-white flex items-center gap-1">
         <i class="fa-solid fa-user-shield text-brand-purple"></i> Admin View
       </button>
       <div class="h-4 w-[1px] bg-slate-600 mx-1"></div>
-      <button onclick="seedData()" title="Pre-populate mock data for quick testing" class="px-2.5 py-1 rounded-full bg-brand-purple text-brand-black font-bold hover:bg-yellow-400 transition">
+      <button onclick="seedData()" title="Pre-populate mock data for quick testing" class="px-2.5 py-1 rounded-full bg-brand-purple text-white font-bold hover:bg-purple-200 transition">
         <i class="fa-solid fa-bolt"></i> Seed Mock Data
       </button>
       <button onclick="resetSystemState()" title="Reset to 0 students clean state" class="px-2.5 py-1 rounded-full bg-rose-600 text-white font-medium hover:bg-rose-700 transition">
@@ -114,11 +114,11 @@
     <!-- ========================================== -->
     <!-- SECTION 1: AUTH / REGISTRATION PORTAL     -->
     <!-- ========================================== -->
-    <div id="authPortalView" class="flex-1 flex flex-col items-center justify-center p-4 bg-slate-950 relative overflow-y-auto">
+    <div id="authPortalView" class="flex-1 flex flex-col items-center justify-center p-4 bg-white relative overflow-y-auto">
       <div class="w-full max-w-md my-auto">
         <!-- Logo Header -->
         <div class="text-center mb-6">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-purple text-brand-black shadow-lg mb-3">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-purple text-white shadow-lg mb-3">
             <i class="fa-solid fa-graduation-cap text-3xl"></i>
           </div>
           <h1 class="text-2xl font-black text-brand-black tracking-tight">EduPay Scholarship</h1>
@@ -128,14 +128,14 @@
         <!-- Auth Card Container -->
         <div class="gcash-card overflow-hidden">
           <!-- Auth Navigation Tabs -->
-          <div class="flex border-b border-slate-100 bg-slate-50">
+          <div class="flex border-b border-purple-100 bg-white">
             <button id="tabBtnRegister" onclick="showAuthTab('register')" class="flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-brand-purple text-brand-black transition">
               <i class="fa-solid fa-user-plus mr-1"></i> Register Student
             </button>
-            <button id="tabBtnStudentLogin" onclick="showAuthTab('studentLogin')" class="flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition">
+            <button id="tabBtnStudentLogin" onclick="showAuthTab('studentLogin')" class="flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-500 hover:text-slate-600 transition">
               <i class="fa-solid fa-right-to-bracket mr-1"></i> Student Login
             </button>
-            <button id="tabBtnAdminLogin" onclick="showAuthTab('adminLogin')" class="flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition">
+            <button id="tabBtnAdminLogin" onclick="showAuthTab('adminLogin')" class="flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-500 hover:text-slate-600 transition">
               <i class="fa-solid fa-shield-halved mr-1"></i> Admin Access
             </button>
           </div>
@@ -151,26 +151,26 @@
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Full Name</label>
                 <div class="relative">
-                  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-user"></i></span>
-                  <input type="text" id="regFullName" required placeholder="e.g. Juan De La Cruz" class="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500"><i class="fa-solid fa-user"></i></span>
+                  <input type="text" id="regFullName" required placeholder="e.g. Juan De La Cruz" class="w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Email Address</label>
-                  <input type="email" id="regEmail" required placeholder="juan@email.com" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <input type="email" id="regEmail" required placeholder="juan@email.com" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                 </div>
                 <div>
                   <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Student ID / LRN</label>
-                  <input type="text" id="regLRN" required placeholder="123456789012" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <input type="text" id="regLRN" required placeholder="123456789012" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Course / Program</label>
-                  <select id="regCourse" required class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <select id="regCourse" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                     <option value="">Select Course</option>
                     <option value="BS Computer Science">BS Computer Science</option>
                     <option value="BS Information Technology">BS Information Technology</option>
@@ -182,7 +182,7 @@
                 </div>
                 <div>
                   <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Year / Grade Level</label>
-                  <select id="regYearLevel" required class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <select id="regYearLevel" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                     <option value="1st Year">1st Year</option>
                     <option value="2nd Year">2nd Year</option>
                     <option value="3rd Year">3rd Year</option>
@@ -194,20 +194,20 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Mobile Number</label>
-                  <input type="tel" id="regPhone" required placeholder="09171234567" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <input type="tel" id="regPhone" required placeholder="09171234567" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                 </div>
                 <div>
                   <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">GWA / Average</label>
-                  <input type="number" step="0.01" min="1.0" max="5.0" id="regGWA" required placeholder="1.50" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                  <input type="number" step="0.01" min="1.0" max="5.0" id="regGWA" required placeholder="1.50" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
                 </div>
               </div>
 
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password</label>
-                <input type="password" id="regPassword" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                <input type="password" id="regPassword" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-yellow-400 text-brand-black font-black text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 mt-4">
+              <button type="submit" class="w-full py-3 bg-brand-purple hover:bg-purple-800 text-white font-black text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 mt-4">
                 <span>Create Student Account</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
@@ -217,14 +217,14 @@
             <form id="formStudentLogin" onsubmit="handleStudentLogin(event)" class="space-y-4 hidden">
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Email or LRN</label>
-                <input type="text" id="loginStudentUser" required placeholder="juan@email.com" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                <input type="text" id="loginStudentUser" required placeholder="juan@email.com" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password</label>
-                <input type="password" id="loginStudentPass" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                <input type="password" id="loginStudentPass" required placeholder="••••••••" class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-black hover:bg-brand-darkpurple text-brand-purple font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+              <button type="submit" class="w-full py-3 bg-brand-black hover:bg-brand-darkpurple text-purple-700 font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 <span>Sign In as Student</span>
               </button>
@@ -246,20 +246,20 @@
 
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Admin Email</label>
-                <input type="email" id="loginAdminEmail" value="admin@scholarship.gov.ph" required class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                <input type="email" id="loginAdminEmail" value="admin@scholarship.gov.ph" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password</label>
-                <input type="password" id="loginAdminPass" value="admin123" required class="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-brand-black">
+                <input type="password" id="loginAdminPass" value="admin123" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
 
-              <button type="submit" class="w-full py-3 bg-brand-black hover:bg-brand-darkpurple text-white font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+              <button type="submit" class="w-full py-3 bg-brand-black hover:bg-purple-900 text-white font-bold text-sm rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
                 <i class="fa-solid fa-user-shield text-brand-purple"></i>
                 <span>Access Administrator Portal</span>
               </button>
 
               <div class="pt-2 text-center">
-                <button type="button" onclick="quickAdminLogin()" class="w-full py-2 bg-slate-950 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
+                <button type="button" onclick="quickAdminLogin()" class="w-full py-2 bg-white hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
                   ⚡ Quick Demo Admin Login
                 </button>
               </div>
@@ -272,42 +272,42 @@
     <!-- ========================================== -->
     <!-- SECTION 2: STUDENT PANEL                   -->
     <!-- ========================================== -->
-    <div id="studentPanelView" class="hidden flex-1 flex flex-col md:flex-row bg-slate-950 min-h-0 overflow-hidden">
+    <div id="studentPanelView" class="hidden flex-1 flex flex-col md:flex-row bg-white min-h-0 overflow-hidden">
       <!-- Student Sidebar Nav -->
       <aside class="w-full md:w-64 bg-brand-black text-white flex flex-col shrink-0 border-r border-slate-800">
         <!-- Student Header Profile Brief -->
         <div class="p-4 bg-brand-darkpurple flex items-center gap-3">
-          <div class="w-11 h-11 rounded-full bg-brand-purple text-brand-black flex items-center justify-center font-black text-lg shadow-inner">
+          <div class="w-11 h-11 rounded-full bg-brand-purple text-white flex items-center justify-center font-black text-lg shadow-inner">
             <span id="studentAvatarInitials">JD</span>
           </div>
           <div class="overflow-hidden">
             <h3 id="studentNavName" class="font-bold text-sm text-white truncate">Juan De La Cruz</h3>
-            <p id="studentNavLRN" class="text-xs text-brand-purple opacity-90 truncate">LRN: 123456789012</p>
+            <p id="studentNavLRN" class="text-xs text-purple-200 opacity-100 truncate">LRN: 123456789012</p>
           </div>
         </div>
 
         <!-- Navigation Links -->
         <nav class="flex-1 p-3 space-y-1 overflow-y-auto no-scrollbar">
-          <button onclick="showStudentSection('dashboard')" id="sNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-brand-purple bg-slate-800/80 transition">
+          <button onclick="showStudentSection('dashboard')" id="sNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition">
             <i class="fa-solid fa-house w-4 text-center"></i> Dashboard
           </button>
-          <button onclick="showStudentSection('profile')" id="sNav-profile" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showStudentSection('profile')" id="sNav-profile" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-id-card w-4 text-center"></i> Student Profile
           </button>
-          <button onclick="showStudentSection('scholarships')" id="sNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showStudentSection('scholarships')" id="sNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-graduation-cap w-4 text-center"></i> Available Scholarships
           </button>
-          <button onclick="showStudentSection('apply')" id="sNav-apply" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showStudentSection('apply')" id="sNav-apply" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-pen-to-square w-4 text-center"></i> Application Form
           </button>
-          <button onclick="showStudentSection('tracking')" id="sNav-tracking" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showStudentSection('tracking')" id="sNav-tracking" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-route w-4 text-center"></i> Application Tracking
           </button>
-          <button onclick="showStudentSection('notifications')" id="sNav-notifications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showStudentSection('notifications')" id="sNav-notifications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <span class="flex items-center gap-3"><i class="fa-solid fa-bell w-4 text-center"></i> Notifications</span>
-            <span id="studentNotifBadge" class="bg-brand-purple text-brand-black text-[10px] font-black px-2 py-0.5 rounded-full hidden">0</span>
+            <span id="studentNotifBadge" class="bg-brand-purple text-white text-[10px] font-black px-2 py-0.5 rounded-full hidden">0</span>
           </button>
-          <button onclick="showStudentSection('settings')" id="sNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showStudentSection('settings')" id="sNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-gear w-4 text-center"></i> Account Settings
           </button>
         </nav>
@@ -321,7 +321,7 @@
       </aside>
 
       <!-- Student Main Content Area -->
-      <main class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar bg-slate-50">
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar bg-white">
 
         <!-- 1. STUDENT DASHBOARD -->
         <div id="studentSec-dashboard" class="space-y-6">
@@ -333,7 +333,7 @@
               <p class="text-brand-black/80 text-sm mt-1 max-w-xl">Welcome to your digital scholarship hub. Apply, manage requirements, and track payout statuses easily.</p>
               
               <div class="mt-4 flex flex-wrap gap-2">
-                <button onclick="showStudentSection('apply')" class="px-4 py-2 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800 transition shadow">
+                <button onclick="showStudentSection('apply')" class="px-4 py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition shadow">
                   <i class="fa-solid fa-plus mr-1"></i> Apply for Scholarship
                 </button>
                 <button onclick="showStudentSection('tracking')" class="px-4 py-2 bg-white/80 text-brand-black font-bold text-xs rounded-xl hover:bg-white transition">
@@ -351,7 +351,7 @@
                 <i class="fa-solid fa-file-signature"></i>
               </div>
               <div>
-                <p class="text-xs font-bold text-slate-400 uppercase">My Submissions</p>
+                <p class="text-xs font-bold text-slate-500 uppercase">My Submissions</p>
                 <h4 id="dashMyApplicationsCount" class="text-2xl font-black text-slate-800">0</h4>
               </div>
             </div>
@@ -361,7 +361,7 @@
                 <i class="fa-solid fa-arrows-spin"></i>
               </div>
               <div>
-                <p class="text-xs font-bold text-slate-400 uppercase">Current Status</p>
+                <p class="text-xs font-bold text-slate-500 uppercase">Current Status</p>
                 <h4 id="dashLatestStatus" class="text-sm font-bold text-slate-800">No Active App</h4>
               </div>
             </div>
@@ -371,7 +371,7 @@
                 <i class="fa-solid fa-wallet"></i>
               </div>
               <div>
-                <p class="text-xs font-bold text-slate-400 uppercase">Approved Funds</p>
+                <p class="text-xs font-bold text-slate-500 uppercase">Approved Funds</p>
                 <h4 id="dashApprovedFunds" class="text-2xl font-black text-emerald-600">₱0.00</h4>
               </div>
             </div>
@@ -406,7 +406,7 @@
               <h2 class="text-xl font-black text-brand-black">Student Profile & Academic Info</h2>
               <p class="text-xs text-slate-500">Ensure your information is updated for fast scholarship evaluation.</p>
             </div>
-            <button onclick="saveStudentProfile()" class="px-4 py-2 bg-brand-purple text-brand-black font-bold text-xs rounded-xl hover:bg-yellow-400 shadow">
+            <button onclick="saveStudentProfile()" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-200 shadow">
               <i class="fa-solid fa-floppy-disk mr-1"></i> Save Profile Updates
             </button>
           </div>
@@ -414,14 +414,14 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Left Info Sidebar Card -->
             <div class="gcash-card p-6 text-center">
-              <div class="w-24 h-24 rounded-full bg-brand-black text-brand-purple text-3xl font-black mx-auto flex items-center justify-center mb-3 shadow-md">
+              <div class="w-24 h-24 rounded-full bg-brand-black text-white text-3xl font-black mx-auto flex items-center justify-center mb-3 shadow-md">
                 <span id="profAvatarInitials">JD</span>
               </div>
               <h3 id="profCardName" class="font-bold text-base text-slate-800">Juan De La Cruz</h3>
               <p id="profCardCourse" class="text-xs text-slate-500 mb-2">BS Computer Science</p>
               <span id="profGwaBadge" class="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold">GWA: 1.50</span>
 
-              <div class="mt-6 pt-4 border-t border-slate-100 text-left space-y-2 text-xs">
+              <div class="mt-6 pt-4 border-t border-purple-100 text-left space-y-2 text-xs">
                 <p class="flex justify-between text-slate-600"><span>Verification:</span> <strong class="text-emerald-600">Verified ID</strong></p>
                 <p class="flex justify-between text-slate-600"><span>Account Status:</span> <strong class="text-brand-black">Active Student</strong></p>
               </div>
@@ -430,41 +430,41 @@
             <!-- Right Details Forms -->
             <div class="md:col-span-2 space-y-4">
               <div class="gcash-card p-6 space-y-4">
-                <h4 class="text-sm font-bold text-brand-black uppercase tracking-wider border-b pb-2"><i class="fa-solid fa-user text-brand-purple mr-1"></i> Personal Information</h4>
+                <h4 class="text-sm font-bold text-brand-black uppercase tracking-wider border-b pb-2"><i class="fa-solid fa-user text-purple-700 mr-1"></i> Personal Information</h4>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">Full Name</label>
-                    <input type="text" id="profFullName" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium">
+                    <input type="text" id="profFullName" class="w-full p-2.5 bg-white border rounded-xl font-medium">
                   </div>
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">Email Address</label>
-                    <input type="email" id="profEmail" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium" readonly>
+                    <input type="email" id="profEmail" class="w-full p-2.5 bg-white border rounded-xl font-medium" readonly>
                   </div>
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">Phone Number</label>
-                    <input type="text" id="profPhone" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium">
+                    <input type="text" id="profPhone" class="w-full p-2.5 bg-white border rounded-xl font-medium">
                   </div>
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">LRN / Student ID</label>
-                    <input type="text" id="profLRN" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium" readonly>
+                    <input type="text" id="profLRN" class="w-full p-2.5 bg-white border rounded-xl font-medium" readonly>
                   </div>
                 </div>
               </div>
 
               <div class="gcash-card p-6 space-y-4">
-                <h4 class="text-sm font-bold text-brand-black uppercase tracking-wider border-b pb-2"><i class="fa-solid fa-graduation-cap text-brand-purple mr-1"></i> Academic Background</h4>
+                <h4 class="text-sm font-bold text-brand-black uppercase tracking-wider border-b pb-2"><i class="fa-solid fa-graduation-cap text-purple-700 mr-1"></i> Academic Background</h4>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">Course/Program</label>
-                    <input type="text" id="profCourse" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium">
+                    <input type="text" id="profCourse" class="w-full p-2.5 bg-white border rounded-xl font-medium">
                   </div>
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">Year Level</label>
-                    <input type="text" id="profYear" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium">
+                    <input type="text" id="profYear" class="w-full p-2.5 bg-white border rounded-xl font-medium">
                   </div>
                   <div>
                     <label class="block font-bold text-slate-600 mb-1">General Weighted Average</label>
-                    <input type="number" step="0.01" id="profGWA" class="w-full p-2.5 bg-slate-50 border rounded-xl font-medium">
+                    <input type="number" step="0.01" id="profGWA" class="w-full p-2.5 bg-white border rounded-xl font-medium">
                   </div>
                 </div>
               </div>
@@ -482,11 +482,11 @@
           <!-- Filter & Search Bar -->
           <div class="gcash-card p-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
             <div class="relative w-full sm:w-72">
-              <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
-              <input type="text" id="scholarshipSearch" onkeyup="renderScholarshipList()" placeholder="Search scholarships..." class="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border rounded-xl focus:outline-none focus:border-brand-black">
+              <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-500 text-xs"></i>
+              <input type="text" id="scholarshipSearch" onkeyup="renderScholarshipList()" placeholder="Search scholarships..." class="w-full pl-9 pr-3 py-2 text-xs bg-white border rounded-xl focus:outline-none focus:border-brand-purple">
             </div>
             <div class="flex gap-2 w-full sm:w-auto">
-              <select id="scholarshipFilterType" onchange="renderScholarshipList()" class="text-xs bg-slate-50 border rounded-xl px-3 py-2 font-medium">
+              <select id="scholarshipFilterType" onchange="renderScholarshipList()" class="text-xs bg-white border rounded-xl px-3 py-2 font-medium">
                 <option value="ALL">All Categories</option>
                 <option value="Academic">Academic Excellence</option>
                 <option value="Financial">Financial Need</option>
@@ -512,7 +512,7 @@
           <div class="gcash-card p-4">
             <div class="flex items-center justify-between text-xs font-bold text-slate-500">
               <div id="wizardStepHeader1" class="flex items-center gap-2 text-brand-black font-bold">
-                <span class="w-6 h-6 rounded-full bg-brand-purple text-brand-black flex items-center justify-center text-xs">1</span>
+                <span class="w-6 h-6 rounded-full bg-brand-purple text-white flex items-center justify-center text-xs">1</span>
                 <span>Select Program</span>
               </div>
               <div class="h-[2px] flex-1 bg-slate-200 mx-2"></div>
@@ -532,11 +532,11 @@
           <div class="gcash-card p-6">
             <!-- STEP 1: PROGRAM SELECTION -->
             <div id="wizardStep1" class="space-y-4">
-              <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-list-check text-brand-purple mr-1"></i> Step 1: Select Target Scholarship</h3>
+              <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-list-check text-purple-700 mr-1"></i> Step 1: Select Target Scholarship</h3>
               
               <div>
                 <label class="block text-xs font-bold text-slate-600 mb-1">Choose Program</label>
-                <select id="appSelectProgram" class="w-full p-3 bg-slate-50 border rounded-xl text-xs font-bold text-slate-800 focus:outline-none focus:border-brand-black">
+                <select id="appSelectProgram" class="w-full p-3 bg-white border rounded-xl text-xs font-bold text-slate-800 focus:outline-none focus:border-brand-purple">
                   <option value="">-- Choose a Scholarship --</option>
                   <!-- Populated dynamically -->
                 </select>
@@ -553,11 +553,11 @@
 
               <div>
                 <label class="block text-xs font-bold text-slate-600 mb-1">Application Statement / Letter of Intent</label>
-                <textarea id="appStatement" rows="4" placeholder="Briefly state why you deserve this scholarship..." class="w-full p-3 bg-slate-50 border rounded-xl text-xs focus:outline-none focus:border-brand-black"></textarea>
+                <textarea id="appStatement" rows="4" placeholder="Briefly state why you deserve this scholarship..." class="w-full p-3 bg-white border rounded-xl text-xs focus:outline-none focus:border-brand-purple"></textarea>
               </div>
 
               <div class="flex justify-end pt-4">
-                <button onclick="goToWizardStep(2)" class="px-5 py-2.5 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+                <button onclick="goToWizardStep(2)" class="px-5 py-2.5 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
                   Next: Upload Documents <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
               </div>
@@ -565,52 +565,52 @@
 
             <!-- STEP 2: DOCUMENT UPLOADS -->
             <div id="wizardStep2" class="space-y-4 hidden">
-              <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-cloud-arrow-up text-brand-purple mr-1"></i> Step 2: Requirements Upload Simulator</h3>
+              <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-cloud-arrow-up text-purple-700 mr-1"></i> Step 2: Requirements Upload Simulator</h3>
               <p class="text-xs text-slate-500">Upload simulated requirement files (e.g. COR, Grades, Income Certificate).</p>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <!-- Doc 1: COR -->
-                <div class="p-4 border border-dashed border-slate-300 rounded-2xl bg-slate-50 flex flex-col items-center justify-center text-center">
+                <div class="p-4 border border-dashed border-slate-300 rounded-2xl bg-white flex flex-col items-center justify-center text-center">
                   <i class="fa-solid fa-file-pdf text-rose-500 text-3xl mb-2"></i>
                   <span class="font-bold text-slate-700">Certificate of Registration (COR)</span>
-                  <span class="text-[10px] text-slate-400 mb-3">PDF or Image file up to 5MB</span>
+                  <span class="text-[10px] text-slate-500 mb-3">PDF or Image file up to 5MB</span>
                   <input type="file" id="fileCOR" class="hidden" onchange="handleFileSim(this, 'statusCOR')">
                   <button type="button" onclick="document.getElementById('fileCOR').click()" class="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-[11px]">
                     <i class="fa-solid fa-paperclip"></i> Select File
                   </button>
-                  <span id="statusCOR" class="mt-2 font-bold text-slate-400 text-[10px]">No file chosen</span>
+                  <span id="statusCOR" class="mt-2 font-bold text-slate-500 text-[10px]">No file chosen</span>
                 </div>
 
                 <!-- Doc 2: Grades -->
-                <div class="p-4 border border-dashed border-slate-300 rounded-2xl bg-slate-50 flex flex-col items-center justify-center text-center">
+                <div class="p-4 border border-dashed border-slate-300 rounded-2xl bg-white flex flex-col items-center justify-center text-center">
                   <i class="fa-solid fa-file-lines text-blue-500 text-3xl mb-2"></i>
                   <span class="font-bold text-slate-700">Official Report Card / Grades</span>
-                  <span class="text-[10px] text-slate-400 mb-3">Certified copy showing GWA</span>
+                  <span class="text-[10px] text-slate-500 mb-3">Certified copy showing GWA</span>
                   <input type="file" id="fileGrades" class="hidden" onchange="handleFileSim(this, 'statusGrades')">
                   <button type="button" onclick="document.getElementById('fileGrades').click()" class="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-[11px]">
                     <i class="fa-solid fa-paperclip"></i> Select File
                   </button>
-                  <span id="statusGrades" class="mt-2 font-bold text-slate-400 text-[10px]">No file chosen</span>
+                  <span id="statusGrades" class="mt-2 font-bold text-slate-500 text-[10px]">No file chosen</span>
                 </div>
 
                 <!-- Doc 3: ID -->
-                <div class="p-4 border border-dashed border-slate-300 rounded-2xl bg-slate-50 flex flex-col items-center justify-center text-center md:col-span-2">
+                <div class="p-4 border border-dashed border-slate-300 rounded-2xl bg-white flex flex-col items-center justify-center text-center md:col-span-2">
                   <i class="fa-solid fa-id-card text-emerald-500 text-3xl mb-2"></i>
                   <span class="font-bold text-slate-700">Valid Student ID / Government ID</span>
-                  <span class="text-[10px] text-slate-400 mb-3">Front & Back photo</span>
+                  <span class="text-[10px] text-slate-500 mb-3">Front & Back photo</span>
                   <input type="file" id="fileID" class="hidden" onchange="handleFileSim(this, 'statusID')">
                   <button type="button" onclick="document.getElementById('fileID').click()" class="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-[11px]">
                     <i class="fa-solid fa-paperclip"></i> Select File
                   </button>
-                  <span id="statusID" class="mt-2 font-bold text-slate-400 text-[10px]">No file chosen</span>
+                  <span id="statusID" class="mt-2 font-bold text-slate-500 text-[10px]">No file chosen</span>
                 </div>
               </div>
 
-              <div class="flex justify-between pt-4 border-t border-slate-100">
+              <div class="flex justify-between pt-4 border-t border-purple-100">
                 <button onclick="goToWizardStep(1)" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-300">
                   <i class="fa-solid fa-arrow-left mr-1"></i> Back
                 </button>
-                <button onclick="goToWizardStep(3)" class="px-5 py-2.5 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+                <button onclick="goToWizardStep(3)" class="px-5 py-2.5 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
                   Next: Review Application <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
               </div>
@@ -618,9 +618,9 @@
 
             <!-- STEP 3: REVIEW & SUBMIT -->
             <div id="wizardStep3" class="space-y-4 hidden">
-              <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-check-double text-brand-purple mr-1"></i> Step 3: Final Application Summary</h3>
+              <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-check-double text-purple-700 mr-1"></i> Step 3: Final Application Summary</h3>
               
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs space-y-3">
+              <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs space-y-3">
                 <div class="flex justify-between pb-2 border-b border-slate-200">
                   <span class="text-slate-500">Applicant:</span>
                   <strong id="reviewApplicantName" class="text-slate-800">Student Name</strong>
@@ -644,11 +644,11 @@
                 <span>By submitting, you certify that all uploaded information and documents are true and accurate.</span>
               </div>
 
-              <div class="flex justify-between pt-4 border-t border-slate-100">
+              <div class="flex justify-between pt-4 border-t border-purple-100">
                 <button onclick="goToWizardStep(2)" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-300">
                   <i class="fa-solid fa-arrow-left mr-1"></i> Back
                 </button>
-                <button onclick="submitScholarshipApplication()" class="px-6 py-3 bg-brand-purple hover:bg-yellow-400 text-brand-black font-black text-xs rounded-xl shadow-lg transition transform active:scale-95 flex items-center gap-2">
+                <button onclick="submitScholarshipApplication()" class="px-6 py-3 bg-brand-purple hover:bg-purple-800 text-white font-black text-xs rounded-xl shadow-lg transition transform active:scale-95 flex items-center gap-2">
                   <i class="fa-solid fa-paper-plane"></i> Submit Scholarship Application
                 </button>
               </div>
@@ -693,14 +693,14 @@
           </div>
 
           <div class="gcash-card p-6 space-y-4 max-w-lg">
-            <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-lock text-brand-purple mr-1"></i> Security</h3>
+            <h3 class="text-sm font-bold text-brand-black uppercase tracking-wider"><i class="fa-solid fa-lock text-purple-700 mr-1"></i> Security</h3>
             
             <div>
               <label class="block text-xs font-bold text-slate-600 mb-1">New Password</label>
-              <input type="password" id="setNewPassword" placeholder="Enter new password" class="w-full p-2.5 bg-slate-50 border rounded-xl text-xs">
+              <input type="password" id="setNewPassword" placeholder="Enter new password" class="w-full p-2.5 bg-white border rounded-xl text-xs">
             </div>
 
-            <button onclick="updatePassword()" class="px-4 py-2 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800 transition">
+            <button onclick="updatePassword()" class="px-4 py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 transition">
               Update Security Password
             </button>
           </div>
@@ -712,12 +712,12 @@
     <!-- ========================================== -->
     <!-- SECTION 3: ADMINISTRATOR PANEL             -->
     <!-- ========================================== -->
-    <div id="adminPanelView" class="hidden flex-1 flex flex-col md:flex-row bg-slate-950 min-h-0 overflow-hidden">
+    <div id="adminPanelView" class="hidden flex-1 flex flex-col md:flex-row bg-white min-h-0 overflow-hidden">
       <!-- Admin Sidebar Nav -->
       <aside class="w-full md:w-64 bg-slate-900 text-white flex flex-col shrink-0 border-r border-slate-800">
         <!-- Admin Header -->
         <div class="p-4 bg-brand-black flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-brand-purple text-brand-black flex items-center justify-center font-black text-lg shadow">
+          <div class="w-10 h-10 rounded-xl bg-brand-purple text-white flex items-center justify-center font-black text-lg shadow">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
           <div>
@@ -728,26 +728,26 @@
 
         <!-- Navigation Links -->
         <nav class="flex-1 p-3 space-y-1 overflow-y-auto custom-scrollbar">
-          <button onclick="showAdminSection('dashboard')" id="aNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-brand-purple bg-slate-800/80 transition">
+          <button onclick="showAdminSection('dashboard')" id="aNav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition">
             <i class="fa-solid fa-chart-pie w-4 text-center"></i> Dashboard
           </button>
-          <button onclick="showAdminSection('scholarships')" id="aNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showAdminSection('scholarships')" id="aNav-scholarships" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-folder-plus w-4 text-center"></i> Scholarship Programs
           </button>
-          <button onclick="showAdminSection('students')" id="aNav-students" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showAdminSection('students')" id="aNav-students" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-users w-4 text-center"></i> Student Records
           </button>
-          <button onclick="showAdminSection('applications')" id="aNav-applications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showAdminSection('applications')" id="aNav-applications" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <span class="flex items-center gap-3"><i class="fa-solid fa-clipboard-check w-4 text-center"></i> Verification & Review</span>
             <span id="adminPendingBadge" class="bg-amber-500 text-slate-900 font-bold text-[10px] px-2 py-0.5 rounded-full hidden">0</span>
           </button>
-          <button onclick="showAdminSection('approved')" id="aNav-approved" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showAdminSection('approved')" id="aNav-approved" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-user-check w-4 text-center"></i> Approved Scholars
           </button>
-          <button onclick="showAdminSection('reports')" id="aNav-reports" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showAdminSection('reports')" id="aNav-reports" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-chart-column w-4 text-center"></i> Reports & Analytics
           </button>
-          <button onclick="showAdminSection('settings')" id="aNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+          <button onclick="showAdminSection('settings')" id="aNav-settings" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition">
             <i class="fa-solid fa-sliders w-4 text-center"></i> System Settings
           </button>
         </nav>
@@ -761,7 +761,7 @@
       </aside>
 
       <!-- Admin Main Content Area -->
-      <main class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar bg-slate-950">
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar bg-white">
 
         <!-- 1. ADMIN DASHBOARD -->
         <div id="adminSec-dashboard" class="space-y-6">
@@ -778,25 +778,25 @@
           <!-- KPI Cards -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="gcash-card p-4 border-l-4 border-slate-800">
-              <p class="text-[11px] font-bold text-slate-400 uppercase">Total Registered</p>
+              <p class="text-[11px] font-bold text-slate-500 uppercase">Total Registered</p>
               <h3 id="statTotalStudents" class="text-2xl font-black text-slate-800">0</h3>
               <p class="text-[10px] text-slate-500 mt-1">Student Accounts</p>
             </div>
 
             <div class="gcash-card p-4 border-l-4 border-amber-500">
-              <p class="text-[11px] font-bold text-slate-400 uppercase">Pending Review</p>
+              <p class="text-[11px] font-bold text-slate-500 uppercase">Pending Review</p>
               <h3 id="statPendingApps" class="text-2xl font-black text-amber-600">0</h3>
               <p class="text-[10px] text-slate-500 mt-1">Requires Officer Action</p>
             </div>
 
             <div class="gcash-card p-4 border-l-4 border-emerald-500">
-              <p class="text-[11px] font-bold text-slate-400 uppercase">Approved Scholars</p>
+              <p class="text-[11px] font-bold text-slate-500 uppercase">Approved Scholars</p>
               <h3 id="statApprovedApps" class="text-2xl font-black text-emerald-600">0</h3>
               <p class="text-[10px] text-slate-500 mt-1">Active Beneficiaries</p>
             </div>
 
             <div class="gcash-card p-4 border-l-4 border-brand-purple">
-              <p class="text-[11px] font-bold text-slate-400 uppercase">Disbursed Funds</p>
+              <p class="text-[11px] font-bold text-slate-500 uppercase">Disbursed Funds</p>
               <h3 id="statTotalDisbursed" class="text-2xl font-black text-brand-black">₱0.00</h3>
               <p class="text-[10px] text-slate-500 mt-1">Allocated Support</p>
             </div>
@@ -805,14 +805,14 @@
           <!-- Visual Chart Section & Activity Feed -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="lg:col-span-2 gcash-card p-6">
-              <h3 class="text-sm font-bold text-brand-black mb-4"><i class="fa-solid fa-chart-column text-brand-purple mr-1"></i> Application Status Distribution</h3>
+              <h3 class="text-sm font-bold text-brand-black mb-4"><i class="fa-solid fa-chart-column text-purple-700 mr-1"></i> Application Status Distribution</h3>
               <div class="h-64 relative">
                 <canvas id="adminStatusChart"></canvas>
               </div>
             </div>
 
             <div class="gcash-card p-6 flex flex-col">
-              <h3 class="text-sm font-bold text-brand-black mb-4"><i class="fa-solid fa-clock-rotate-left text-brand-purple mr-1"></i> Recent Audit Log</h3>
+              <h3 class="text-sm font-bold text-brand-black mb-4"><i class="fa-solid fa-clock-rotate-left text-purple-700 mr-1"></i> Recent Audit Log</h3>
               <div id="adminAuditLog" class="flex-1 space-y-3 overflow-y-auto max-h-64 text-xs text-slate-600 custom-scrollbar">
                 <!-- Dynamic Logs -->
               </div>
@@ -827,7 +827,7 @@
               <h2 class="text-xl font-black text-brand-black">Scholarship Programs Management</h2>
               <p class="text-xs text-slate-500">Configure grant programs, eligibility criteria, and slots.</p>
             </div>
-            <button onclick="openCreateProgramModal()" class="px-4 py-2 bg-brand-purple text-brand-black font-bold text-xs rounded-xl hover:bg-yellow-400 shadow">
+            <button onclick="openCreateProgramModal()" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl hover:bg-purple-200 shadow">
               <i class="fa-solid fa-plus mr-1"></i> Create New Program
             </button>
           </div>
@@ -846,12 +846,12 @@
 
           <div class="gcash-card p-4">
             <div class="flex flex-col sm:flex-row gap-3 justify-between mb-4">
-              <input type="text" id="adminStudentSearch" onkeyup="renderAdminStudentTable()" placeholder="Search by name, email or LRN..." class="w-full sm:w-80 px-3 py-2 text-xs bg-slate-50 border rounded-xl">
+              <input type="text" id="adminStudentSearch" onkeyup="renderAdminStudentTable()" placeholder="Search by name, email or LRN..." class="w-full sm:w-80 px-3 py-2 text-xs bg-white border rounded-xl">
             </div>
 
             <div class="overflow-x-auto">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-950 text-slate-600 font-bold uppercase border-b">
+                <thead class="bg-white text-slate-600 font-bold uppercase border-b">
                   <tr>
                     <th class="p-3">Student Name</th>
                     <th class="p-3">LRN</th>
@@ -889,7 +889,7 @@
           <div class="gcash-card p-4">
             <div class="overflow-x-auto">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-950 text-slate-600 font-bold uppercase border-b">
+                <thead class="bg-white text-slate-600 font-bold uppercase border-b">
                   <tr>
                     <th class="p-3">App ID</th>
                     <th class="p-3">Applicant Name</th>
@@ -918,7 +918,7 @@
           <div class="gcash-card p-4">
             <div class="overflow-x-auto">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-950 text-slate-600 font-bold uppercase border-b">
+                <thead class="bg-white text-slate-600 font-bold uppercase border-b">
                   <tr>
                     <th class="p-3">Scholar Name</th>
                     <th class="p-3">Program</th>
@@ -942,7 +942,7 @@
               <h2 class="text-xl font-black text-brand-black">System Reports & Analytics</h2>
               <p class="text-xs text-slate-500">Exportable summary logs and financial reports.</p>
             </div>
-            <button onclick="simulateExportReport()" class="px-4 py-2 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800 shadow">
+            <button onclick="simulateExportReport()" class="px-4 py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800 shadow">
               <i class="fa-solid fa-download mr-1"></i> Export Report (CSV)
             </button>
           </div>
@@ -979,7 +979,7 @@
               <input type="checkbox" checked class="w-4 h-4 text-brand-black rounded">
             </div>
 
-            <button onclick="saveAdminSettings()" class="px-4 py-2 bg-brand-purple text-brand-black font-bold text-xs rounded-xl shadow">
+            <button onclick="saveAdminSettings()" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl shadow">
               Save Configuration Changes
             </button>
           </div>
@@ -1003,27 +1003,27 @@
           <h3 class="font-bold text-sm text-brand-purple" id="modalReviewAppId">App #APP-001</h3>
           <p class="text-xs text-slate-300" id="modalReviewStudentName">Applicant Name</p>
         </div>
-        <button onclick="closeReviewModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+        <button onclick="closeReviewModal()" class="text-slate-500 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
       </div>
 
       <!-- Modal Body -->
       <div class="p-6 overflow-y-auto space-y-6 flex-1 text-xs custom-scrollbar">
         <!-- Student Info Brief -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white p-3 rounded-xl border border-slate-200">
           <div>
-            <span class="text-slate-400 block text-[10px] uppercase font-bold">Course</span>
+            <span class="text-slate-500 block text-[10px] uppercase font-bold">Course</span>
             <strong id="modalCourse" class="text-slate-800">BS CS</strong>
           </div>
           <div>
-            <span class="text-slate-400 block text-[10px] uppercase font-bold">Year</span>
+            <span class="text-slate-500 block text-[10px] uppercase font-bold">Year</span>
             <strong id="modalYear" class="text-slate-800">2nd Year</strong>
           </div>
           <div>
-            <span class="text-slate-400 block text-[10px] uppercase font-bold">GWA</span>
+            <span class="text-slate-500 block text-[10px] uppercase font-bold">GWA</span>
             <strong id="modalGWA" class="text-slate-800">1.50</strong>
           </div>
           <div>
-            <span class="text-slate-400 block text-[10px] uppercase font-bold">Target Program</span>
+            <span class="text-slate-500 block text-[10px] uppercase font-bold">Target Program</span>
             <strong id="modalProgram" class="text-slate-800">STEM Grant</strong>
           </div>
         </div>
@@ -1031,22 +1031,22 @@
         <!-- Statement -->
         <div>
           <h4 class="font-bold text-slate-700 uppercase tracking-wider mb-1">Letter of Intent</h4>
-          <p id="modalStatement" class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-600">Statement text...</p>
+          <p id="modalStatement" class="p-3 bg-white rounded-xl border border-slate-200 text-slate-600">Statement text...</p>
         </div>
 
         <!-- Verification Checklist Simulator -->
         <div>
           <h4 class="font-bold text-slate-700 uppercase tracking-wider mb-2">Requirement Checklist Verification</h4>
           <div class="space-y-2">
-            <label class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-200">
+            <label class="flex items-center gap-2 p-2 bg-white rounded-lg border border-slate-200">
               <input type="checkbox" id="chkCOR" class="w-4 h-4 text-brand-black rounded">
               <span>Verified Official Certificate of Registration (COR)</span>
             </label>
-            <label class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-200">
+            <label class="flex items-center gap-2 p-2 bg-white rounded-lg border border-slate-200">
               <input type="checkbox" id="chkGrades" class="w-4 h-4 text-brand-black rounded">
               <span>Verified Report Card & Meets GWA Requirement</span>
             </label>
-            <label class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-200">
+            <label class="flex items-center gap-2 p-2 bg-white rounded-lg border border-slate-200">
               <input type="checkbox" id="chkID" class="w-4 h-4 text-brand-black rounded">
               <span>Verified Student / Government ID Authenticity</span>
             </label>
@@ -1057,13 +1057,13 @@
         <div>
           <h4 class="font-bold text-slate-700 uppercase tracking-wider mb-2">Submitted Attachments Inspection</h4>
           <div class="grid grid-cols-3 gap-2">
-            <button onclick="previewDoc('Certificate of Registration')" class="p-2 bg-slate-950 hover:bg-slate-200 rounded-lg border text-left text-[11px] flex items-center gap-2">
+            <button onclick="previewDoc('Certificate of Registration')" class="p-2 bg-white hover:bg-slate-200 rounded-lg border text-left text-[11px] flex items-center gap-2">
               <i class="fa-solid fa-file-pdf text-rose-600"></i> COR.pdf
             </button>
-            <button onclick="previewDoc('Grades Transcript')" class="p-2 bg-slate-950 hover:bg-slate-200 rounded-lg border text-left text-[11px] flex items-center gap-2">
+            <button onclick="previewDoc('Grades Transcript')" class="p-2 bg-white hover:bg-slate-200 rounded-lg border text-left text-[11px] flex items-center gap-2">
               <i class="fa-solid fa-file-lines text-blue-600"></i> Grades.pdf
             </button>
-            <button onclick="previewDoc('Valid ID Card')" class="p-2 bg-slate-950 hover:bg-slate-200 rounded-lg border text-left text-[11px] flex items-center gap-2">
+            <button onclick="previewDoc('Valid ID Card')" class="p-2 bg-white hover:bg-slate-200 rounded-lg border text-left text-[11px] flex items-center gap-2">
               <i class="fa-solid fa-image text-emerald-600"></i> ID_Card.png
             </button>
           </div>
@@ -1072,12 +1072,12 @@
         <!-- Remarks Input -->
         <div>
           <label class="block font-bold text-slate-700 mb-1">Evaluation Remarks / Correction Notes</label>
-          <textarea id="modalAdminRemarks" rows="2" placeholder="Provide notes or explain reasons if returning or rejecting..." class="w-full p-2.5 bg-slate-50 border rounded-xl focus:outline-none focus:border-brand-black"></textarea>
+          <textarea id="modalAdminRemarks" rows="2" placeholder="Provide notes or explain reasons if returning or rejecting..." class="w-full p-2.5 bg-white border rounded-xl focus:outline-none focus:border-brand-purple"></textarea>
         </div>
       </div>
 
       <!-- Modal Footer Actions -->
-      <div class="p-4 bg-slate-950 border-t flex flex-wrap justify-between gap-2">
+      <div class="p-4 bg-white border-t flex flex-wrap justify-between gap-2">
         <button onclick="executeAppAction('RETURN')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl flex items-center gap-1.5">
           <i class="fa-solid fa-rotate-left"></i> Return for Correction
         </button>
@@ -1099,17 +1099,17 @@
     <div class="gcash-card w-full max-w-lg p-6 space-y-4">
       <div class="flex justify-between items-center border-b pb-2">
         <h3 class="font-bold text-brand-black">Create New Scholarship Program</h3>
-        <button onclick="closeCreateProgramModal()" class="text-slate-400"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="closeCreateProgramModal()" class="text-slate-500"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
       <form onsubmit="handleCreateProgram(event)" class="space-y-3 text-xs">
         <div>
           <label class="block font-bold text-slate-600 mb-1">Program Title</label>
-          <input type="text" id="progTitle" required placeholder="e.g. Barangay Youth Leader Grant" class="w-full p-2.5 bg-slate-50 border rounded-xl">
+          <input type="text" id="progTitle" required placeholder="e.g. Barangay Youth Leader Grant" class="w-full p-2.5 bg-white border rounded-xl">
         </div>
         <div>
           <label class="block font-bold text-slate-600 mb-1">Category</label>
-          <select id="progCategory" class="w-full p-2.5 bg-slate-50 border rounded-xl">
+          <select id="progCategory" class="w-full p-2.5 bg-white border rounded-xl">
             <option value="Academic">Academic Excellence</option>
             <option value="Financial">Financial Assistance</option>
             <option value="Barangay">Community / Barangay Support</option>
@@ -1118,25 +1118,25 @@
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-bold text-slate-600 mb-1">Award Amount (₱)</label>
-            <input type="number" id="progAmount" required placeholder="15000" class="w-full p-2.5 bg-slate-50 border rounded-xl">
+            <input type="number" id="progAmount" required placeholder="15000" class="w-full p-2.5 bg-white border rounded-xl">
           </div>
           <div>
             <label class="block font-bold text-slate-600 mb-1">Available Slots</label>
-            <input type="number" id="progSlots" required placeholder="50" class="w-full p-2.5 bg-slate-50 border rounded-xl">
+            <input type="number" id="progSlots" required placeholder="50" class="w-full p-2.5 bg-white border rounded-xl">
           </div>
         </div>
         <div>
           <label class="block font-bold text-slate-600 mb-1">Max GWA Requirement</label>
-          <input type="number" step="0.01" id="progGWA" required placeholder="2.00" class="w-full p-2.5 bg-slate-50 border rounded-xl">
+          <input type="number" step="0.01" id="progGWA" required placeholder="2.00" class="w-full p-2.5 bg-white border rounded-xl">
         </div>
         <div>
           <label class="block font-bold text-slate-600 mb-1">Description</label>
-          <textarea id="progDesc" rows="2" required placeholder="Brief description..." class="w-full p-2.5 bg-slate-50 border rounded-xl"></textarea>
+          <textarea id="progDesc" rows="2" required placeholder="Brief description..." class="w-full p-2.5 bg-white border rounded-xl"></textarea>
         </div>
 
         <div class="flex justify-end gap-2 pt-2">
           <button type="button" onclick="closeCreateProgramModal()" class="px-4 py-2 bg-slate-200 text-slate-700 font-bold rounded-xl">Cancel</button>
-          <button type="submit" class="px-4 py-2 bg-brand-purple text-brand-black font-bold rounded-xl">Publish Program</button>
+          <button type="submit" class="px-4 py-2 bg-brand-purple text-white font-bold rounded-xl">Publish Program</button>
         </div>
       </form>
     </div>
@@ -1345,9 +1345,9 @@
       document.getElementById('formStudentLogin').classList.add('hidden');
       document.getElementById('formAdminLogin').classList.add('hidden');
 
-      document.getElementById('tabBtnRegister').className = "flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-400 transition";
-      document.getElementById('tabBtnStudentLogin').className = "flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-400 transition";
-      document.getElementById('tabBtnAdminLogin').className = "flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-400 transition";
+      document.getElementById('tabBtnRegister').className = "flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-500 transition";
+      document.getElementById('tabBtnStudentLogin').className = "flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-500 transition";
+      document.getElementById('tabBtnAdminLogin').className = "flex-1 py-3.5 text-xs sm:text-sm font-bold text-center border-b-2 border-transparent text-slate-500 transition";
 
       if (tab === 'register') {
         document.getElementById('formRegister').classList.remove('hidden');
@@ -1467,13 +1467,13 @@
         const el = document.getElementById(`studentSec-${s}`);
         const btn = document.getElementById(`sNav-${s}`);
         if (el) el.classList.add('hidden');
-        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition";
+        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition";
       });
 
       const activeEl = document.getElementById(`studentSec-${sec}`);
       const activeBtn = document.getElementById(`sNav-${sec}`);
       if (activeEl) activeEl.classList.remove('hidden');
-      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-brand-purple bg-slate-800/80 transition";
+      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition";
 
       if (sec === 'scholarships') renderScholarshipList();
       if (sec === 'apply') prepareApplicationWizard();
@@ -1503,9 +1503,9 @@
         
         // Active App Highlight Card
         document.getElementById('dashActiveAppContainer').innerHTML = `
-          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="p-4 bg-white border border-slate-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span class="text-[10px] font-bold text-slate-400 uppercase">Application ID: ${latest.id}</span>
+              <span class="text-[10px] font-bold text-slate-500 uppercase">Application ID: ${latest.id}</span>
               <h4 class="font-bold text-sm text-brand-black">${latest.scholarshipTitle}</h4>
               <p class="text-xs text-slate-500">Submitted on: ${latest.submittedDate}</p>
             </div>
@@ -1552,7 +1552,7 @@
             <h4 class="font-bold text-sm text-brand-black">${s.title}</h4>
             <p class="text-xs text-slate-500 mt-1 line-clamp-2">${s.description}</p>
           </div>
-          <button onclick="applyForScholarshipDirect('${s.id}')" class="mt-4 w-full py-2 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800">Apply Now</button>
+          <button onclick="applyForScholarshipDirect('${s.id}')" class="mt-4 w-full py-2 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">Apply Now</button>
         </div>
       `).join('');
     }
@@ -1589,23 +1589,23 @@
           <div>
             <div class="flex justify-between items-center mb-2">
               <span class="px-3 py-1 bg-amber-100 text-amber-900 font-bold text-xs rounded-full">${s.category}</span>
-              <span class="text-xs font-bold text-slate-400">Slots: ${s.slots}</span>
+              <span class="text-xs font-bold text-slate-500">Slots: ${s.slots}</span>
             </div>
             <h3 class="font-black text-base text-brand-black">${s.title}</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">${s.description}</p>
             
-            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-bold text-slate-600">
-              <span class="bg-slate-950 px-2.5 py-1 rounded-lg">GWA ≤ ${s.minGWA}</span>
-              <span class="bg-slate-950 px-2.5 py-1 rounded-lg">Deadline: ${s.deadline}</span>
+            <div class="mt-4 pt-3 border-t border-purple-100 flex flex-wrap gap-2 text-[11px] font-bold text-slate-600">
+              <span class="bg-white px-2.5 py-1 rounded-lg">GWA ≤ ${s.minGWA}</span>
+              <span class="bg-white px-2.5 py-1 rounded-lg">Deadline: ${s.deadline}</span>
             </div>
           </div>
 
           <div class="mt-6 flex items-center justify-between pt-2">
             <div>
-              <span class="text-[10px] text-slate-400 block uppercase font-bold">Grant Amount</span>
+              <span class="text-[10px] text-slate-500 block uppercase font-bold">Grant Amount</span>
               <strong class="text-lg font-black text-emerald-600">₱${s.amount.toLocaleString()}</strong>
             </div>
-            <button onclick="applyForScholarshipDirect('${s.id}')" class="px-5 py-2.5 bg-brand-black hover:bg-slate-800 text-brand-purple font-bold text-xs rounded-xl shadow transition">
+            <button onclick="applyForScholarshipDirect('${s.id}')" class="px-5 py-2.5 bg-brand-black hover:bg-slate-800 text-purple-700 font-bold text-xs rounded-xl shadow transition">
               Apply Now
             </button>
           </div>
@@ -1665,9 +1665,9 @@
         const header = document.getElementById(`wizardStepHeader${s}`);
         if (s === step) {
           header.className = "flex items-center gap-2 text-brand-black font-bold";
-          header.querySelector('span').className = "w-6 h-6 rounded-full bg-brand-purple text-brand-black flex items-center justify-center text-xs font-bold";
+          header.querySelector('span').className = "w-6 h-6 rounded-full bg-brand-purple text-white flex items-center justify-center text-xs font-bold";
         } else {
-          header.className = "flex items-center gap-2 text-slate-400 font-normal";
+          header.className = "flex items-center gap-2 text-slate-500 font-normal";
           header.querySelector('span').className = "w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs";
         }
       });
@@ -1723,7 +1723,7 @@
             <i class="fa-solid fa-folder-open text-4xl text-slate-300"></i>
             <h3 class="font-bold text-slate-700">No Applications Submitted</h3>
             <p class="text-xs text-slate-500">You haven't applied for any scholarships yet.</p>
-            <button onclick="showStudentSection('scholarships')" class="px-4 py-2 bg-brand-purple text-brand-black font-bold text-xs rounded-xl">Browse Grants</button>
+            <button onclick="showStudentSection('scholarships')" class="px-4 py-2 bg-brand-purple text-white font-bold text-xs rounded-xl">Browse Grants</button>
           </div>
         `;
         return;
@@ -1731,9 +1731,9 @@
 
       container.innerHTML = myApps.map(app => `
         <div class="gcash-card p-6 space-y-4">
-          <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-3 border-b border-slate-100">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-3 border-b border-purple-100">
             <div>
-              <span class="text-[10px] font-bold text-slate-400 uppercase">App ID: ${app.id}</span>
+              <span class="text-[10px] font-bold text-slate-500 uppercase">App ID: ${app.id}</span>
               <h3 class="font-black text-lg text-brand-black">${app.scholarshipTitle}</h3>
             </div>
             <div class="flex items-center gap-2">
@@ -1752,8 +1752,8 @@
           </div>
 
           <!-- Officer Remarks Box -->
-          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
-            <span class="font-bold text-slate-600 block mb-1"><i class="fa-solid fa-comment-dots text-brand-purple mr-1"></i> Officer Feedback / Remarks:</span>
+          <div class="bg-white p-3 rounded-xl border border-slate-200 text-xs">
+            <span class="font-bold text-slate-600 block mb-1"><i class="fa-solid fa-comment-dots text-purple-700 mr-1"></i> Officer Feedback / Remarks:</span>
             <p class="text-slate-700 font-medium">${app.remarks || 'No specific officer notes.'}</p>
           </div>
 
@@ -1789,7 +1789,7 @@
       if (stepIndex <= activeIndex) {
         return "p-2 bg-brand-purple/20 text-brand-black rounded-xl border border-brand-purple font-bold";
       }
-      return "p-2 bg-slate-950 text-slate-400 rounded-xl";
+      return "p-2 bg-white text-slate-500 rounded-xl";
     }
 
     function renderStudentNotifications() {
@@ -1797,24 +1797,24 @@
       const myApps = appState.applications.filter(a => a.studentId === currentUser.id);
 
       if (myApps.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-400 text-center py-4">No notifications yet.</p>`;
+        container.innerHTML = `<p class="text-xs text-slate-500 text-center py-4">No notifications yet.</p>`;
         return;
       }
 
       container.innerHTML = myApps.map(a => `
-        <div class="p-3 bg-slate-50 rounded-xl border text-xs flex gap-3 items-start">
-          <i class="fa-solid fa-bell text-brand-purple text-base mt-0.5"></i>
+        <div class="p-3 bg-white rounded-xl border text-xs flex gap-3 items-start">
+          <i class="fa-solid fa-bell text-purple-700 text-base mt-0.5"></i>
           <div>
             <h4 class="font-bold text-slate-800">Status Update for ${a.scholarshipTitle}</h4>
             <p class="text-slate-600 mt-0.5">Your application status is now <strong class="text-brand-black">${a.status}</strong>. Feedback: "${a.remarks}"</p>
-            <span class="text-[10px] text-slate-400 mt-1 block">${a.submittedDate}</span>
+            <span class="text-[10px] text-slate-500 mt-1 block">${a.submittedDate}</span>
           </div>
         </div>
       `).join('');
     }
 
     function clearStudentNotifications() {
-      document.getElementById('studentNotifList').innerHTML = `<p class="text-xs text-slate-400 text-center py-4">Notifications cleared.</p>`;
+      document.getElementById('studentNotifList').innerHTML = `<p class="text-xs text-slate-500 text-center py-4">Notifications cleared.</p>`;
     }
 
     function updatePassword() {
@@ -1844,13 +1844,13 @@
         const el = document.getElementById(`adminSec-${s}`);
         const btn = document.getElementById(`aNav-${s}`);
         if (el) el.classList.add('hidden');
-        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition";
+        if (btn) btn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-purple-900 hover:text-white transition";
       });
 
       const activeEl = document.getElementById(`adminSec-${sec}`);
       const activeBtn = document.getElementById(`aNav-${sec}`);
       if (activeEl) activeEl.classList.remove('hidden');
-      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-brand-purple bg-slate-800/80 transition";
+      if (activeBtn) activeBtn.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/60 transition";
 
       if (sec === 'dashboard') renderAdminDashboard();
       if (sec === 'scholarships') renderAdminScholarships();
@@ -1876,11 +1876,11 @@
 
       // Audit log render
       document.getElementById('adminAuditLog').innerHTML = appState.auditLog.map(l => `
-        <div class="p-2 bg-slate-50 rounded-lg border border-slate-200">
-          <span class="text-[10px] text-slate-400 font-bold block">${l.timestamp}</span>
+        <div class="p-2 bg-white rounded-lg border border-slate-200">
+          <span class="text-[10px] text-slate-500 font-bold block">${l.timestamp}</span>
           <span>${l.message}</span>
         </div>
-      `).join('') || `<p class="text-slate-400 italic">No system log activity.</p>`;
+      `).join('') || `<p class="text-slate-500 italic">No system log activity.</p>`;
 
       // Render Chart.js
       renderAdminChart();
@@ -1978,18 +1978,18 @@
       );
 
       if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-400">No student records found in database.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-500">No student records found in database.</td></tr>`;
         return;
       }
 
       tbody.innerHTML = filtered.map(s => `
-        <tr class="hover:bg-slate-50">
+        <tr class="hover:bg-white">
           <td class="p-3 font-bold text-brand-black">${s.fullName}</td>
           <td class="p-3 text-slate-600">${s.lrn}</td>
           <td class="p-3 text-slate-600">${s.course} (${s.yearLevel})</td>
           <td class="p-3 font-bold text-amber-700">${s.gwa}</td>
           <td class="p-3 text-slate-600">${s.phone}</td>
-          <td class="p-3 text-slate-400">${s.registeredDate}</td>
+          <td class="p-3 text-slate-500">${s.registeredDate}</td>
         </tr>
       `).join('');
     }
@@ -2008,22 +2008,22 @@
       });
 
       if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-400">No applications matching filter.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-500">No applications matching filter.</td></tr>`;
         return;
       }
 
       tbody.innerHTML = filtered.map(a => {
         const student = appState.students.find(s => s.id === a.studentId);
         return `
-          <tr class="hover:bg-slate-50">
+          <tr class="hover:bg-white">
             <td class="p-3 font-bold text-brand-black">${a.id}</td>
             <td class="p-3 font-medium text-slate-800">${a.studentName}</td>
             <td class="p-3 text-slate-600">${a.scholarshipTitle}</td>
-            <td class="p-3 text-slate-400">${a.submittedDate}</td>
+            <td class="p-3 text-slate-500">${a.submittedDate}</td>
             <td class="p-3 font-bold text-amber-700">${student ? student.gwa : 'N/A'}</td>
             <td class="p-3">${getStatusBadgeHTML(a.status)}</td>
             <td class="p-3 text-right">
-              <button onclick="openReviewModal('${a.id}')" class="px-3 py-1.5 bg-brand-black text-brand-purple font-bold text-xs rounded-xl hover:bg-slate-800">
+              <button onclick="openReviewModal('${a.id}')" class="px-3 py-1.5 bg-brand-black text-purple-700 font-bold text-xs rounded-xl hover:bg-slate-800">
                 Inspect & Action
               </button>
             </td>
@@ -2097,16 +2097,16 @@
       const approved = appState.applications.filter(a => a.status === 'Approved');
 
       if (approved.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-400">No approved scholars yet.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-500">No approved scholars yet.</td></tr>`;
         return;
       }
 
       tbody.innerHTML = approved.map(a => `
-        <tr class="hover:bg-slate-50">
+        <tr class="hover:bg-white">
           <td class="p-3 font-bold text-brand-black">${a.studentName}</td>
           <td class="p-3 text-slate-600">${a.scholarshipTitle}</td>
           <td class="p-3 font-black text-emerald-600">₱${a.amount.toLocaleString()}</td>
-          <td class="p-3 text-slate-400">${a.submittedDate}</td>
+          <td class="p-3 text-slate-500">${a.submittedDate}</td>
           <td class="p-3"><span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[10px] rounded-full">Ready for Payout</span></td>
         </tr>
       `).join('');
@@ -2118,7 +2118,7 @@
         const count = appState.applications.filter(a => a.scholarshipId === s.id).length;
         const approvedCount = appState.applications.filter(a => a.scholarshipId === s.id && a.status === 'Approved').length;
         return `
-          <div class="p-3 bg-slate-50 rounded-xl border flex justify-between items-center">
+          <div class="p-3 bg-white rounded-xl border flex justify-between items-center">
             <div>
               <strong class="text-brand-black block">${s.title}</strong>
               <span class="text-slate-500">Slots: ${s.slots} | Total Applicants: ${count}</span>
