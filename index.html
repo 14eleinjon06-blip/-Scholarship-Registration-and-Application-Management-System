@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduPay Scholarship Portal</title>
+  <title>NVSU Scholarship Registration and Application Management System</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -201,7 +201,7 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
       </span>
-      <span class="font-bold tracking-wide text-white uppercase">EduPay System Simulator</span>
+      <span class="font-bold tracking-wide text-white uppercase">NVSU Scholarship System Demo</span>
       <span class="hidden md:inline text-slate-300">| Active User: <strong id="currentUserLabel" class="text-white">None (Not Logged In)</strong></span>
     </div>
 
@@ -241,8 +241,8 @@
           <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-purple text-white shadow-lg mb-3">
             <i class="fa-solid fa-graduation-cap text-3xl"></i>
           </div>
-          <h1 class="text-2xl font-black text-brand-black tracking-tight">EduPay Scholarship</h1>
-          <p class="text-slate-500 text-sm mt-1">Digital Scholarship Registration & Management</p>
+          <h1 class="text-2xl font-black text-brand-black tracking-tight">NVSU Scholarship Portal</h1>
+          <p class="text-slate-500 text-sm mt-1">Nueva Vizcaya State University</p><p class="text-slate-500 text-xs mt-2 leading-relaxed">Prototype based on the research: assessing registration procedures, requirements submission, verification, application monitoring, accessibility, organization, and processing.</p>
         </div>
 
         <!-- Auth Card Container -->
@@ -361,12 +361,12 @@
             <form id="formAdminLogin" onsubmit="handleAdminLogin(event)" class="space-y-4 hidden">
               <div class="bg-blue-50 rounded-xl p-3 border border-blue-200 text-xs text-blue-900 flex gap-2 items-center mb-1">
                 <i class="fa-solid fa-shield text-blue-600 text-sm"></i>
-                <span>Default Admin Creds: <strong>admin@scholarship.gov.ph</strong> / <strong>admin123</strong></span>
+                <span>Demo administrator access: use the sample demo credentials configured for this prototype.</span>
               </div>
 
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Admin Email</label>
-                <input type="email" id="loginAdminEmail" value="admin@scholarship.gov.ph" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
+                <input type="email" id="loginAdminEmail" value="admin@nvsu.edu.ph" required class="w-full px-3 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-brand-purple">
               </div>
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password</label>
@@ -917,7 +917,7 @@
 
             <div class="gcash-card p-4 border-l-4 border-brand-purple">
               <p class="text-[11px] font-bold text-slate-500 uppercase">Disbursed Funds</p>
-              <h3 id="statTotalDisbursed" class="text-2xl font-black text-brand-black">₱0.00</h3>
+              <h3 id="statApprovedApplications" class="text-2xl font-black text-brand-black">₱0.00</h3>
               <p class="text-[10px] text-slate-500 mt-1">Allocated Support</p>
             </div>
           </div>
@@ -1564,7 +1564,7 @@
       const email = document.getElementById('loginAdminEmail').value;
       const pass = document.getElementById('loginAdminPass').value;
 
-      if (email === 'admin@scholarship.gov.ph' && pass === 'admin123') {
+      if (email === 'admin@nvsu.edu.ph' && pass === 'admin123') {
         showToast("Admin access granted!", "success");
         switchRoleView('admin');
       } else {
@@ -1991,8 +1991,8 @@
       const approved = appState.applications.filter(a => a.status === 'Approved').length;
       document.getElementById('statApprovedApps').innerText = approved;
 
-      const totalDisbursed = appState.applications.filter(a => a.status === 'Approved').reduce((acc, curr) => acc + curr.amount, 0);
-      document.getElementById('statTotalDisbursed').innerText = `₱${totalDisbursed.toLocaleString()}`;
+      const approvedApplications = appState.applications.filter(a => a.status === 'Approved').reduce((acc, curr) => acc + curr.amount, 0);
+      document.getElementById('statApprovedApplications').innerText = `₱${approvedApplications.toLocaleString()}`;
 
       // Audit log render
       document.getElementById('adminAuditLog').innerHTML = appState.auditLog.map(l => `
@@ -2189,11 +2189,11 @@
 
       if (action === 'APPROVE') {
         app.status = 'Approved';
-        app.remarks = remarks || 'Congratulations! Application approved for full grant.';
+        app.remarks = remarks || 'Congratulations! Application approved for application status updated by authorized personnel.';
         showToast(`Application ${app.id} APPROVED!`, "success");
       } else if (action === 'REJECT') {
         app.status = 'Rejected';
-        app.remarks = remarks || 'Application rejected due to criteria non-compliance.';
+        app.remarks = remarks || 'Application decision recorded by authorized scholarship personnel.';
         showToast(`Application ${app.id} REJECTED.`, "error");
       } else if (action === 'RETURN') {
         app.status = 'Returned for Correction';
@@ -2227,7 +2227,7 @@
           <td class="p-3 text-slate-600">${a.scholarshipTitle}</td>
           <td class="p-3 font-black text-emerald-600">₱${a.amount.toLocaleString()}</td>
           <td class="p-3 text-slate-500">${a.submittedDate}</td>
-          <td class="p-3"><span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[10px] rounded-full">Ready for Payout</span></td>
+          <td class="p-3"><span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[10px] rounded-full">Approved</span></td>
         </tr>
       `).join('');
     }
@@ -2252,7 +2252,7 @@
     }
 
     function simulateExportReport() {
-      showToast("Generating CSV Report download simulation...", "success");
+      showToast("Report export is a prototype feature; connect a backend to generate actual records.", "success");
     }
 
     function saveAdminSettings() {
