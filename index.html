@@ -91,7 +91,7 @@
       <div class="field"><label for="fullName">Full name</label><input id="fullName" required placeholder="Enter your full name"></div>
       <div class="field"><label for="studentId">Student ID</label><input id="studentId" required placeholder="Enter student ID"></div>
       <div class="field"><label for="email">Email address</label><input id="email" type="email" required placeholder="name@example.com"></div>
-      <div class="field"><label for="campus">NVSU Campus</label><select id="campus" required><option value="">Select campus</option><option value="Bayombong Campus">Bayombong Campus</option><option value="Bambang Campus">Bambang Campus</option></select></div>
+      <div class="field"><label for="campus">NVSU Campus</label><select id="campus" required><option value="Bayombong Campus" selected>Bayombong Campus</option></select></div>
       <div class="field"><label for="program">Program / Course</label><select id="program" required disabled><option value="">Select campus first</option></select><small>Choose from the programs listed for the selected NVSU campus.</small></div>
       <div class="field"><label for="year">Year level</label><select id="year" required><option value="">Select year level</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>5th Year</option></select></div>
       <div class="field"><label for="scholarship">Scholarship applied for</label><input id="scholarship" required placeholder="Enter scholarship name"></div>
@@ -122,7 +122,9 @@ function updateProgramOptions(){
  (CAMPUS_PROGRAMS[campus]||[]).forEach(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;program.appendChild(option)});
  program.disabled=!campus;
 }
-document.getElementById('campus').addEventListener('change',updateProgramOptions);
+document.getElementById('campus').value='Bayombong Campus';
+document.getElementById('campus').disabled=true;
+updateProgramOptions();
 const STORAGE_KEY='nvsu-scholarship-research-prototype-v1';
 let apps=[];
 try{apps=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');if(!Array.isArray(apps))apps=[]}catch(e){apps=[]}
