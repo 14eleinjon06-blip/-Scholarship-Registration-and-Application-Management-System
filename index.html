@@ -15,8 +15,7 @@
  <div><button id="studentMode" class="active" onclick="setMode('student')">Student Portal</button> <button id="staffMode" onclick="setMode('staff')">Scholarship Personnel</button></div>
 </header>
 <main class="shell">
- <section class="hero"><div><div class="eyebrow">Scholarship registration and application</div><h1>A clearer way to manage scholarship applications.</h1><p>A research-based prototype focused on registration, scholarship requirements, verification, application status monitoring, and communication for NVSU students and scholarship personnel.</p></div><div class="hero-mark">✦</div></section>
- <div class="notice"><strong>Research prototype:</strong> This portal demonstrates possible features based on the study. It does not connect to an official NVSU database, accept real applications, or determine scholarship awards. Final selection and approval remain with authorized scholarship personnel.</div>
+ 
  <section id="studentPanel">
   <div class="tabs"><button class="active" id="tabApply" onclick="showStudentTab('apply')">Registration & Application</button><button id="tabTrack" onclick="showStudentTab('track')">Track Application</button><button id="tabMessages" onclick="showStudentTab('messages')">Updates & Communication</button></div>
   <div id="applyView">
@@ -37,22 +36,7 @@
      <div class="actions"><button class="btn primary" type="submit">Save Demo Application</button><button class="btn" type="reset">Clear Form</button></div>
     </form><div id="formFeedback" class="message hidden" role="status"></div>
    </div><aside>
-    <div class="card"><h2>Application Process</h2><p class="sub">Suggested workflow to support the research objectives.</p><div class="steps">
-     <div class="step"><div class="num">1</div><div><strong>Register details</strong><span>Provide student and scholarship information.</span></div></div>
-     <div class="step"><div class="num">2</div><div><strong>Prepare requirements</strong><span>Organize documents based on the official checklist.</span></div></div>
-     <div class="step"><div class="num">3</div><div><strong>Verification and validation</strong><span>Personnel check completeness and accuracy.</span></div></div>
-     <div class="step"><div class="num">4</div><div><strong>Monitor status</strong><span>Review progress and messages about the application.</span></div></div>
-    </div></div>
-    <div class="card"><h2>Why this portal?</h2><p class="sub">The research assesses the current process and identifies areas requiring improvement.</p><div class="list"><div class="item"><div><strong>Efficiency</strong><p>Make the steps easier to follow.</p></div></div><div class="item"><div><strong>Accessibility</strong><p>Help users find application information.</p></div></div><div class="item"><div><strong>Organization</strong><p>Keep application details and checklist together.</p></div></div><div class="item"><div><strong>Application processing</strong><p>Support status tracking and personnel review.</p></div></div></div></div>
-   </aside></div>
-  </div>
-  <div id="trackView" class="hidden"><div class="card"><h2>Track Application Status</h2><p class="sub">Applications saved in this browser demo will appear below.</p><div id="studentApplications" class="list"></div></div></div>
-  <div id="messagesView" class="hidden"><div class="card"><h2>Updates & Communication</h2><p class="sub">Status notes added by scholarship personnel appear here in this prototype.</p><div id="studentMessages" class="list"></div></div></div>
- </section>
- <section id="staffPanel" class="hidden">
-  <div class="statgrid"><div class="stat"><span>Total demo applications</span><strong id="countAll">0</strong></div><div class="stat"><span>For review</span><strong id="countReview">0</strong></div><div class="stat"><span>Needs correction</span><strong id="countReturned">0</strong></div></div>
-  <div class="card"><h2>Application Records</h2><p class="sub">Review details, check the requirements checklist, update process status, and leave a message. This demo does not make final scholarship decisions.</p><div class="field"><label for="filterStatus">Filter by status</label><select id="filterStatus" onchange="renderStaff()"><option value="All">All statuses</option><option>Submitted for review</option><option>Under verification</option><option>Requirements need correction</option><option>Requirements checked</option></select></div><div id="staffApplications" class="table-wrap"></div></div>
-  <div class="card"><h2>Research Alignment</h2><p class="sub">The proposed system requirements should be based on findings from students and scholarship personnel.</p><div class="list"><div class="item"><div><strong>Existing process</strong><p>Registration, requirements, verification, monitoring, and communication.</p></div></div><div class="item"><div><strong>Assessment dimensions</strong><p>Efficiency, accessibility, organization, and application processing.</p></div></div><div class="item"><div><strong>Expected research output</strong><p>Proposed system requirements for future development, not an automated award decision.</p></div></div></div></div>
+    <div class="card"><h2>Research Alignment</h2><p class="sub">The proposed system requirements should be based on findings from students and scholarship personnel.</p><div class="list"><div class="item"><div><strong>Existing process</strong><p>Registration, requirements, verification, monitoring, and communication.</p></div></div><div class="item"><div><strong>Assessment dimensions</strong><p>Efficiency, accessibility, organization, and application processing.</p></div></div><div class="item"><div><strong>Expected research output</strong><p>Proposed system requirements for future development, not an automated award decision.</p></div></div></div></div>
  </section>
  <footer class="footer">NVSU Scholarship Registration and Application Management System · Research-based interface prototype</footer>
 </main>
