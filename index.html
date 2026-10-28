@@ -72,6 +72,15 @@
  .top-nav button{font-size:12px}
 }
 
+
+/* Smaller header navigation */
+.top-nav.tabs{gap:6px;flex:0 1 auto}
+.top-nav.tabs button{padding:7px 10px;min-height:34px;font-size:12px;line-height:1.2;border-radius:8px}
+@media(max-width:760px){
+ .top-nav.tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .top-nav.tabs button{min-height:34px;padding:7px 6px;font-size:11px;line-height:1.2;border-radius:8px}
+}
+@media(max-width:380px){.top-nav.tabs button{font-size:10px;padding:6px 4px;min-height:32px}}
 </style>
 </head>
 <body>
